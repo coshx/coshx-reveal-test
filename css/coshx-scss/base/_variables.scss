@@ -1,0 +1,22 @@
+// Responsive design breakpoints
+$wide-desktop-breakpoint: 1300px;
+$desktop-breakpoint: 1024px;
+$wide-tablet-breakpoint: 768px;
+$tablet-breakpoint: 480px;
+$wide-phone-breakpoint: 320px;
+
+// Z-indexes of our different components
+$header-z-index: 3;
+// Hidden menu
+$header-menu-z-index: 4;
+$main-z-index: 1;
+$footer-z-index: 2;
+
+// Colors
+$black: #1a1a1a;
+$white: #fff;
+$blue: #5255ff;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #E8E8E8;
+$border-gray: #ccc;
