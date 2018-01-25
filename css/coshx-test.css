@@ -57,17 +57,17 @@
 	height:100%;
 	overflow:auto;
 	z-index:2;
-	font-size:4vh;
+	font-size:4vmin;
 	margin-right:0;
 }
 
 .slideshow .slide h1 {
-	font-size:8vh;
-	line-height:9vh;
+	font-size:8vmin;
+	line-height:9vmin;
 	font-weight:300;
 	color:#fff;
 	display:inline;
-	padding-right:25vh;
+	padding-right:25vmin;
 	background-color:#5255ff;
 	overflow:hidden;
 	position:relative;
@@ -78,10 +78,10 @@
 
 @media screen and (min-width: 1024px) {
 	.slideshow .slide h1:after {
-		height:46vh;
-		width:29vh;
-		-webkit-transform:translate(10vh,-40vh) rotate(30deg);
-		transform:translate(10vh,-40vh) rotate(30deg);
+		height:46vmin;
+		width:29vmin;
+		-webkit-transform:translate(10vmin,-40vmin) rotate(30deg);
+		transform:translate(10vmin,-40vmin) rotate(30deg);
 		background-size:cover;
 		content:'';
 		display:inline;
@@ -93,20 +93,20 @@
 }
 
 .slideshow .slide h1+* {
-	margin-top:4vh;
+	margin-top:4vmin;
 }
 
 .slideshow .slide h2 {
-	font-size:6vh;
-	line-height:7vh;
+	font-size:6vmin;
+	line-height:7vmin;
 	font-weight:300;
-	margin-bottom:2vh;
+	margin-bottom:2vmin;
 	padding-left:.25em;
 }
 
 .slideshow .slide h3 {
-	font-size:5vh;
-	line-height:6vh;
+	font-size:5vmin;
+	line-height:6vmin;
 	font-weight:200;
 	padding:0 0 0 .25em;
 	margin:0 0 .25em;
@@ -221,13 +221,13 @@
 	column-count:1;
 }
 
-/* Changed margin-left from 8.5298% to 20vh */
+/* Changed margin-left from 8.5298% to 20vmin */
 .slideshow .slide ul li,.slideshow .slide ol li {
-	margin-left:20vh;
+	margin-left:20vmin;
 	display:list-item;
 	clear:both;
 	float:none;
-	font-size:6vh;
+	font-size:6vmin;
 	line-height:1.5em;
 }
 
@@ -323,8 +323,8 @@
 
 .slideshow .footer {
 	width:100%;
-	height:5vh;
-	padding-top:.5vh;
+	height:5vmin;
+	padding-top:.5vmin;
 	display:-webkit-box;
 	display:-moz-box;
 	display:box;
@@ -350,7 +350,7 @@
 }
 
 .slideshow .footer>* {
-	font-size:3vh;
+	font-size:3vmin;
 	padding:0 1rem;
 }
 
@@ -360,7 +360,7 @@
 }
 
 .slideshow .slide.section h1+* {
-	margin-top:10vh;
+	margin-top:10vmin;
 }
 
 .slideshow .slide h2.section {
@@ -414,7 +414,7 @@
 	font-size:1.4rem!important;
 	position:absolute;
 	display:block;
-	bottom:6vh;
+	bottom:6vmin;
 }
 
 .slideshow .slide.shift-1>:not(h1),.slideshow .slide:not(.shift-1) .shift-1 {
