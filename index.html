@@ -14,6 +14,10 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+        <!-- Include Markdown scripts -->
+        <script src="plugin/markdown/marked.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -38,8 +42,9 @@
 							<br>
 							https://github.com/btatelb/ruby_rails_puppet_training
 						</li>
+                    </ul>
 				</section>
-				<section class="slide section">
+				<section class="slide section columns-2">
 					<h1>
 						Course Flow
 					</h1>
@@ -74,38 +79,36 @@
 						</li>
 					</ul>
 				</section>
-				<section class="slide section">
-					<h1>
-						Introductions
-					</h1>
+				<section data-markdown class="slide section">
+                    <textarea data-template>
+                        # Introductions
+                        - "Hi, I'm #{name}."
+                        - "After this course, I want to be able to #{goal}."
+                        - "My favorite program/app/website is #{app}..."
+                        - "... because #{reason}"
+                    </textarea>
+                </section>
 
-					- "Hi, I'm #{name}."
-					- "After this course, I want to be able to #{goal}."
-					- "My favorite program/app/website is #{app}..."
-					    - "... because #{reason}"
-
-
-				<section data-markdown class="section columns-2 text-medium">
+				<section data-markdown class="section slide columns-2">
 					<textarea data-template>
-						# Course Flow <!-- .element: class="section columns-2 text-medium" -->
-
-						- <!-- .element: class="no-bullet" -->
-						    1. Ruby
-						        1. Build a game in ruby
-						        1. Package the game as a gem
-						        1. Expose some logic via a server
-						    1. Rails
-						        1. Configure &amp; manage
-						        1. Graphical front-end
-						        1. Persistent Storage
-						    1. Puppet
-						        1. Define game resources
-						        1. Read configurations from rails as facts
-						        1. Demonstrate the ruby we've learned
-						    1. ∞ / beyond
-						        1. Advanced Topics
-						        1. Team-specific
-						        1. Creative
+						# Course Flow
+                        
+					    1. Ruby
+					        1. Build a game in ruby
+					        1. Package the game as a gem
+					        1. Expose some logic via a server
+					    1. Rails
+					        1. Configure &amp; manage
+					        1. Graphical front-end
+					        1. Persistent Storage
+					    1. Puppet
+					        1. Define game resources
+					        1. Read configurations from rails as facts
+					        1. Demonstrate the ruby we've learned
+					    1. ∞ / beyond
+					        1. Advanced Topics
+					        1. Team-specific
+					        1. Creative
 					</textarea>
 				</section>
 
