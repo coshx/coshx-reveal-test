@@ -1,0 +1,84 @@
+._button {
+  width: 266px;
+  height: 56px;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  p {
+    margin: 0;
+
+    font: {
+      size: 1rem;
+      weight: normal;
+    }
+    line-height: 1.3rem;
+    color: inherit;
+    text-align: center;
+
+    @include transition(color .1s linear);
+  }
+
+  border: {
+    style: solid;
+    width: 1px;
+  }
+  cursor: pointer;
+
+  @include transition(background-color .5s ease);
+
+  .modal-fade-screen {
+    #nav-modal, #subscribe-modal, #office-hours-modal {
+      p {
+        color: $black;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.blue-button {
+  @extend ._button;
+
+  color: $blue;
+
+  border-color: $blue;
+
+  &:hover {
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+.white-button {
+  @extend ._button;
+
+  color: $white;
+
+  border-color: $white;
+
+  &:hover {
+    color: $black;
+    background-color: $white;
+  }
+}
+
+._button-wrapper {
+  width: 100%;
+  @include display(flex);
+  @include justify-content(center);
+  margin: 4rem 0;
+}
+
+.submit-button {
+  @extend .blue-button;
+  font-size: 1rem;
+  background-color: $white;
+
+  &:disabled {
+    color: $dark-gray;
+    background-color: $medium-gray;
+    border-color: $dark-gray;
+    cursor: not-allowed;
+  }
+}

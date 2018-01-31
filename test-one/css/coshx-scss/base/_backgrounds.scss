@@ -1,0 +1,68 @@
+._background {
+  width: 100%;
+}
+
+._background-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  width: 100%;
+  overflow: hidden;
+  @include display(flex);
+  @include flex-direction(column);
+
+  visibility: hidden;
+}
+
+._triangle {
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+}
+
+$triangle-height: 300px;
+
+.white-plain {
+  @extend ._background;
+}
+
+.blue-plain {
+  @extend ._background;
+  background-color: $blue;
+}
+
+.gray-plain {
+  @extend ._background;
+  background-color: $light-gray;
+}
+
+.bottom-right-triangle {
+  @extend ._triangle;
+
+  border: {
+    color: transparent transparent $blue transparent;
+    width: 0 0 $triangle-height 100vw;
+  }
+}
+
+.top-right-triangle {
+  @extend ._triangle;
+
+  border: {
+    color: transparent $blue transparent transparent;
+    width: 0 100vw $triangle-height 0;
+  }
+}
+
+.top-left-triangle {
+  @extend ._triangle;
+
+  border: {
+    color: $blue transparent transparent transparent;
+    width: $triangle-height 100vw 0 0;
+  }
+
+}

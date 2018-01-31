@@ -1,0 +1,81 @@
+// Bitters 1.0.0
+// http://bitters.bourbon.io
+// Copyright 2013-2015 thoughtbot, inc.
+// MIT License
+@import "variables";
+@import "buttons";
+@import "typography";
+@import "backgrounds";
+
+.invisible {
+  visibility: hidden;
+}
+
+// Generic properties
+body {
+  background: $white;
+}
+
+// Safari fix for disabling lazy scroll
+* {
+  -webkit-overflow-scrolling: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 0;
+  }
+}
+
+// Layouting
+._layout {
+  width: 90%;
+
+  @media all and (min-width: $desktop-breakpoint) {
+    width: 80%;
+  }
+
+  @media all and (min-width: $wide-desktop-breakpoint) {
+    width: 70%;
+  }
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $main-z-index;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  .background-layout {
+    @extend ._background-layout;
+  }
+
+  .content-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .content-layout-inner-wrapper {
+    @extend ._layout;
+    display: inline-block;
+
+    padding-top: 15rem;
+
+    text-align: left;
+  }
+}

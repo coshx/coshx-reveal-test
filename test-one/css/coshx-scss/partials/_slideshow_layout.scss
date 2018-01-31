@@ -1,0 +1,320 @@
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  @include display(flex);
+  @include flex-direction(column);
+
+  .slides {
+    @include flex(1);
+    overflow: auto;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    z-index: 2;
+    font-size: 4vh;
+    margin-right: 0;
+
+    h1 {
+      font-size: 8vh;
+      line-height: 9vh;
+      font-weight: 300;
+      color: $white;
+      display: inline;
+      padding-right: 25vh;
+      background-color: $blue;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      padding-left: 0.25em;
+      margin-bottom: 1em;
+
+      &:after {
+        @include media($desktop-breakpoint) {
+          height: 46vh;
+          width: 29vh;
+          @include transform(translate(10vh, -40vh) rotate(30deg));
+          background-size: cover;
+          content: '';
+          display: inline;
+          position: absolute;
+          background-color: $white;
+          z-index: 1;
+          overflow:hidden;
+        }
+      }
+
+      & + * {
+        margin-top: 4vh;
+      }
+    }
+
+    h2 {
+      font-size: 6vh;
+      line-height: 7vh;
+      font-weight: 300;
+      margin-bottom: 2vh;
+      padding-left: 0.25em;
+    }
+
+    h3 {
+      font-size: 5vh;
+      line-height: 6vh;
+      font-weight: 200;
+      padding: 0 0 0 0.25em;
+      margin: 0 0 0.25em 0;
+    }
+
+    /* blocks of code */
+    &.code-xxsmall {
+      .highlight, td.gutter.gl, pre {
+        font-size: 0.4em;
+        line-height: 1.1em;
+        overflow: hidden;
+      }
+    }
+    &.code-xsmall {
+      .highlight, td.gutter.gl, pre {
+        font-size: 0.7em;
+        line-height: 1.1em;
+        overflow: hidden;
+      }
+    }
+    &.code-small {
+      .highlight, td.gutter.gl, pre {
+        font-size: 0.85em;
+        line-height: 1.1em;
+        overflow: hidden;
+      }
+    }
+    &.code-medium {
+      .highlight, td.gutter.gl, pre {
+        font-size: 1em;
+        line-height: 1em;
+        overflow: hidden;
+      }
+    }
+    &.code-large {
+      .highlight, td.gutter.gl, pre {
+        font-size: 1.3em;
+        line-height: 1em;
+        overflow: hidden;
+      }
+    }
+
+    /** some different text sizes (for when we need to tweak it */
+    &.text-xxsmall {
+      li,td {
+        font-size: 0.6em;
+      }
+    }
+
+    &.text-xsmall {
+      li,td {
+        font-size: 0.75em;
+      }
+    }
+
+    &.text-small {
+      li,td {
+        font-size: 0.9em;
+      }
+    }
+
+    &.text-medium {
+      li,td {
+        font-size: 1.1em;
+
+        li,td {
+          font-size: 0.95em;
+        }
+      }
+    }
+
+    &.text-large {
+      li,td {
+        font-size: 1.8em;
+
+        li,td {
+          font-size: 0.95em;
+        }
+      }
+    }
+
+    li {
+      &.text-xsmall {
+        font-size: 0.75em;
+      }
+      &.text-small {
+        font-size: 0.9em;
+      }
+      &.text-medium {
+        font-size: 1.1em;
+      }
+      &.text-large {
+        font-size: 1.3em;
+      }
+    }
+
+    // code line numbers
+    td.gutter.gl {
+      vertical-align: top;
+      padding-top: 0;
+      color: $medium-gray;
+
+      pre {
+        overflow: hidden;
+      }
+    }
+    &.no-line-numbers td.gutter.gl {
+      display: none;
+    }
+
+    td.code {
+      padding-top: 0;
+      vertical-align: top;
+    }
+
+    ul, ol {
+      margin-left: 0;
+    }
+
+    /* for long lists */
+    &.columns-2 ul {
+      @include column-count(2);
+
+      li ul, li ol {
+        @include column-count(1);
+      }
+    }
+
+    ul li, ol li {
+      @include shift(1);
+      display: list-item;
+      clear: both;
+      float: none;
+      font-size: 6vh;
+      line-height: 1.5em;
+
+      ul li, ol li {
+        font-size: 0.85em;
+        line-height: 1.4em;
+      }
+    }
+
+    /* convenient for single items */
+    li.no-bullet {
+      list-style-type: none !important;
+    }
+
+    ul > li {
+      list-style-type: square;
+
+      &.no-bullets {
+        list-style-type: none;
+
+        ul > li {
+          list-style-type: none;
+
+          &:not(.no-bullets) {
+            ul li:not(.no-bullets) {
+              list-style-type: square;
+            }
+          }
+        }
+
+        /* nesting an ol inside a no-bullets ul is intentional */
+        ol > li {
+          list-style-type: decimal;
+
+          ul > li {
+            list-style-type: square;
+
+            ol > li {
+              list-style-type: lower-alpha
+            }
+          }
+        }
+      }
+
+      strong {
+        font-weight: 500;
+      }
+    }
+
+    ol > li {
+      list-style-type: decimal;
+
+      ol > li {
+        list-style-type: lower-alpha;
+
+        ol > li {
+          list-style-type: lower-roman;
+        }
+      }
+
+      &.no-bullets {
+        list-style-type: none;
+
+        ol > li {
+          list-style-type: none;
+          &:not(.no-bullets) {
+            ol li:not(.no-bullets) {
+              list-style-type: decimal;
+            }
+          }
+        }
+
+        /* nesting a ul inside a no-bullets ol is intentional */
+        ul > li {
+          list-style-type: square;
+
+          ol > li {
+            list-style-type: lower-alpha;
+          }
+        }
+      }
+    }
+
+
+    p {
+      margin-bottom: 0.2em;
+    }
+    li p {
+      margin-bottom: 0;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0.3em;
+      -webkit-border-horizontal-spacing: 0.5em;
+      -webkit-border-vertical-spacing: 0.2em;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: 5vh;
+    padding-top: 0.5vh;
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    color: $medium-gray;
+
+    background-color: $light-gray;
+
+    > * {
+      font-size: 3vh;
+      padding: 0 1rem;
+    }
+  }
+
+}
