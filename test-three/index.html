@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coshx reveal.js + Pug - The HTML Presentation Framework</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Pug by @jlengstorf.">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link id="theme" rel="stylesheet" href="css/theme/coshx.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1> Ruby, Rails, & some puppet</h1>
+          <ul>
+            <li>Instructor: Ben Taitelbaum</li>
+            <li>Slides:<a href="https://coshx.com/talks">https://coshx.com/talks</a></li>
+            <li>Completed Labs:<a href=" https://github.com/btaitelb/ruby_rails_puppet_training">https://github.com/btaitelb/ruby_rails_puppet_training</a></li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="two-column">Course Flow</h1>
+          <ol class="column-one left-justified start">
+            <li>Ruby
+              <ol>
+                <li>Build a game in Ruby</li>
+                <li>Package the game as a gem</li>
+                <li>Expose some logic via the server</li>
+              </ol>
+            </li>
+            <li>Rails
+              <ol>
+                <li>Configure & manage</li>
+                <li>Graphical front-end</li>
+                <li>Persistent Storage</li>
+              </ol>
+            </li>
+          </ol>
+          <ol class="column-two left-justified continue">
+            <li>Puppet
+              <ol>
+                <li>this</li>
+                <li>that</li>
+                <li>the other</li>
+              </ol>
+            </li>
+            <li>other stuff
+              <ol>
+                <li>this</li>
+                <li>that</li>
+                <li>the other</li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h1>Philosophy
+            <h2>Principle of Least Surprise
+              <blockquote class="quote">I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
+                <footer>Yukihiro “Matz” Matsumoto, created ruby in 1993</footer>
+              </blockquote>
+            </h2>
+          </h1>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+      
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+      
+    </script>
+  </body>
+</html>

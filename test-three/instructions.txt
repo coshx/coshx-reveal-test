@@ -1,0 +1,20 @@
+git clone git@github.com:jlengstorf/reveal.js-jade.git [folder-name]
+cd [folder-name]
+npm install
+
+npm start
+http://0.0.0.0:8000/
+
+ADD TO [my-template].css
+.reveal ol.start {
+    counter-reset: mycounter;
+}
+.reveal ol.start li,
+.reveal ol.continue li {
+    list-style: none;
+}
+.reveal ol.start li:before,
+.reveal ol.continue li:before {
+    content: counter(mycounter) ". ";
+    counter-increment: mycounter;
+}
