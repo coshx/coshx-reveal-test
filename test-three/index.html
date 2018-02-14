@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Coshx reveal.js + Pug - The HTML Presentation Framework</title>
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Pug by @jlengstorf.">
+    <title>Coshx Slide Presentation</title>
+    <meta name="description" content="Slide framework by @hakimel. Ported to Pug by @jlengstorf. Modified by @gopalmetro @coshxlabs">
     <link rel="stylesheet" href="css/reveal.css">
     <link id="theme" rel="stylesheet" href="css/theme/coshx.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -29,48 +29,95 @@
           </ul>
         </section>
         <section>
-          <h1 class="two-column">Course Flow</h1>
-          <ol class="column-one left-justified start">
-            <li>Ruby
-              <ol>
-                <li>Build a game in Ruby</li>
-                <li>Package the game as a gem</li>
-                <li>Expose some logic via the server</li>
-              </ol>
-            </li>
-            <li>Rails
-              <ol>
-                <li>Configure & manage</li>
-                <li>Graphical front-end</li>
-                <li>Persistent Storage</li>
-              </ol>
-            </li>
-          </ol>
-          <ol class="column-two left-justified continue">
-            <li>Puppet
-              <ol>
-                <li>this</li>
-                <li>that</li>
-                <li>the other</li>
-              </ol>
-            </li>
-            <li>other stuff
-              <ol>
-                <li>this</li>
-                <li>that</li>
-                <li>the other</li>
-              </ol>
-            </li>
-          </ol>
+          <h1>Course Flow</h1>
+          <div class="x-large">
+            <ol>
+              <li>Ruby
+                <ol>
+                  <li>Build a game in Ruby</li>
+                  <li>Package the game as a gem</li>
+                  <li>Expose some logic via the server</li>
+                </ol>
+              </li>
+              <li>Rails
+                <ol>
+                  <li>Configure & manage</li>
+                  <li>Graphical front-end</li>
+                  <li>Persistent Storage</li>
+                </ol>
+              </li>
+            </ol>
+            <ol>
+              <li>Puppet
+                <ol>
+                  <li>Define game resources</li>
+                  <li>Read configurations from Rails </li>as facts adfad afdadfadfa afdadf adfasdfasdf 
+                  <li>Demonstrate the Ruby we've learned</li>
+                </ol>
+              </li>
+              <li>other stuff
+                <ol>
+                  <li>Advanced topics</li>
+                  <li>Team-specific</li>
+                  <li>Creative</li>
+                </ol>
+              </li>
+            </ol>
+          </div>
         </section>
         <section>
           <h1>Philosophy
-            <h2>Principle of Least Surprise
+            <h3>Principle of Least Surprise
               <blockquote class="quote">I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
                 <footer>Yukihiro “Matz” Matsumoto, created ruby in 1993</footer>
               </blockquote>
-            </h2>
+            </h3>
           </h1>
+        </section>
+        <section>
+          <h1>Duck Typing</h1>
+          <ul>
+            <li>“If it walks and talks like a duck…”</li>
+            <li class="fragment fade-in">Then it’s a duck!</li>
+            <li class="fragment fade-in">As long as an object has the methods we expect, we can ignore its type.</li>
+            <li class="fragment fade-in">Dynamic Typing: objects aren’t type checked until runtime</li>
+            <li class="fragment fade-in">Objects are strongly typed</li>
+            <ul>
+              <li class="fragment fade-in">everything has a type and objects don’t change type</li>
+            </ul>
+            <li class="fragment fade-in">Types aren’t checked unless code explicitly checks</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Comments</h1>
+          <pre><code class="data-trim data-noescape code-line-wrap"># this is a ruby comment
+##
+# We'll use #=> to represent the output of an expression,
+# as if it were evaluated in the Interactive Ruby Shell (irb
+##
+
+3/4.0
+#=> 0.75
+
+=begin 
+You might also come across this style for multi-line comments, but using # is more prevalent. 
+=end</code></pre>
+        </section>
+        <section>
+          <h1>Strings</h1>
+          <pre><code class="data-trim code-line-wraps"># single quotes are for literal strings
+'Hello'
+
+# double quotes allow special characters
+# and variable interpolation
+
+# escaping quotes isn't fun, let ruby do that for us
+%{That's a "quoted" string}
+#=> "That's a \"quoted\" string"
+
+# we often need to trim whitespace off of a string
+"hello \n".strip
+#=> "hello"</code></pre>
         </section>
       </div>
     </div>

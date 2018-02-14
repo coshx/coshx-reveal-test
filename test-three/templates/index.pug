@@ -4,49 +4,96 @@ extends layouts/presentation
 //- Customize the title, meta description, and author using this block.
 block append config
   -
-    config.title = 'Coshx reveal.js + Pug - The HTML Presentation Framework';
-    config.description = 'A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Pug by @jlengstorf.';
+    config.title = 'Coshx Slide Presentation';
+    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf. Modified by @gopalmetro @coshxlabs';
   -
 
 //- Add your slides here. See templates/includes/_mixins.pug for information
 //- on how `+slide` works.
 block slides
-  +slide
-    h1  Ruby, Rails, & some puppet
-    ul
-      li Instructor: Ben Taitelbaum
-      li Slides:
-        a(href="https://coshx.com/talks") https://coshx.com/talks
-      li Completed Labs:
-        a(href=" https://github.com/btaitelb/ruby_rails_puppet_training") https://github.com/btaitelb/ruby_rails_puppet_training
+    +slide
+        h1  Ruby, Rails, & some puppet
+        ul
+            li Instructor: Ben Taitelbaum
+            li Slides:
+                a(href="https://coshx.com/talks") https://coshx.com/talks
+            li Completed Labs:
+                a(href=" https://github.com/btaitelb/ruby_rails_puppet_training") https://github.com/btaitelb/ruby_rails_puppet_training
 
-  +slide
-    h1.two-column Course Flow
-    ol.column-one.left-justified.start
-      li Ruby
-        ol
-          li Build a game in Ruby
-          li Package the game as a gem
-          li Expose some logic via the server
-      li Rails
-        ol
-          li Configure & manage
-          li Graphical front-end
-          li Persistent Storage
-    ol.column-two.left-justified.continue
-      li Puppet
-        ol
-          li this
-          li that
-          li the other
-      li other stuff
-        ol
-          li this
-          li that
-          li the other
-
-  +slide
-    h1 Philosophy
-      h2 Principle of Least Surprise
-        blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
-          footer Yukihiro “Matz” Matsumoto, created ruby in 1993
+    +slide
+        h1 Course Flow
+        .x-large
+            ol
+              li Ruby
+                ol
+                  li Build a game in Ruby
+                  li Package the game as a gem
+                  li Expose some logic via the server
+              li Rails
+                ol
+                  li Configure & manage
+                  li Graphical front-end
+                  li Persistent Storage
+            ol
+              li Puppet
+                ol
+                  li Define game resources
+                  li Read configurations from Rails 
+                  | as facts adfad afdadfadfa afdadf adfasdfasdf 
+                  li Demonstrate the Ruby we've learned
+              li other stuff
+                ol
+                  li Advanced topics
+                  li Team-specific
+                  li Creative
+    +slide
+        h1 Philosophy
+          h3 Principle of Least Surprise
+            blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
+              footer Yukihiro “Matz” Matsumoto, created ruby in 1993
+    +slide
+        h1 Duck Typing
+        ul
+            li “If it walks and talks like a duck…”
+            li.fragment.fade-in Then it’s a duck!
+            li.fragment.fade-in As long as an object has the methods we expect, we can ignore its type.
+            li.fragment.fade-in Dynamic Typing: objects aren’t type checked until runtime
+            li.fragment.fade-in Objects are strongly typed
+            ul
+                li.fragment.fade-in everything has a type and objects don’t change type
+            li.fragment.fade-in Types aren’t checked unless code explicitly checks
+    +slide
+        h1 Comments
+        pre
+          code.data-trim.data-noescape.code-line-wrap
+                | # this is a ruby comment
+                | ##
+                | # We'll use #=> to represent the output of an expression,
+                | # as if it were evaluated in the Interactive Ruby Shell (irb
+                | ##
+                |
+                | 3/4.0
+                | #=> 0.75
+                |
+                | =begin 
+                | You might also come across this style for multi-line comments, but using # is more prevalent. 
+                | =end
+            
+    +slide
+        h1 Strings
+        pre
+            code.data-trim.code-line-wraps
+                | # single quotes are for literal strings
+                | 'Hello'
+                |
+                | # double quotes allow special characters
+                | # and variable interpolation
+                //- | "pi is:\t#{Math::PI}"
+                |
+                | # escaping quotes isn't fun, let ruby do that for us
+                | %{That's a "quoted" string}
+                | #=> "That's a \"quoted\" string"
+                |
+                | # we often need to trim whitespace off of a string
+                | "hello \n".strip
+                | #=> "hello"

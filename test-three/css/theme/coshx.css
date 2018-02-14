@@ -50,7 +50,7 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 1.9em; }
 
 .reveal h2 {
   font-size: 1.6em; }
@@ -93,10 +93,11 @@ body {
   margin: 0 0 0 1em; }
 
 .reveal ol {
-  list-style-type: decimal; }
+  list-style-type: decimal;
+    }
 
 .reveal ul {
-  list-style-type: disc; }
+  list-style-type: square; }
 
 .reveal ul ul {
   list-style-type: square; }
@@ -110,20 +111,6 @@ body {
 .reveal ol ul {
   display: block;
   margin-left: 40px; }
-
-/* Numbered lists across columns */
-.reveal ol {
-  list-style: none;
-}
-
-.reveal ol li:before {
-  counter-increment: mycounter;
-  content: counter(mycounter) ". ";
-}
-
-.reveal ol:first-of-type {
-  counter-reset: mycounter;
-}
 
 .reveal dt {
   font-weight: bold; }
@@ -310,6 +297,7 @@ body {
     font-size: .5em;
     line-height: 1.5em;
 }
+
 .reveal .quote footer {
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.6em;
@@ -317,9 +305,11 @@ body {
     color: #d3d3cf;
     /*float: right;*/
 }
+
 .reveal .quote footer:before {
     content: '\2015';
 }
+
 .reveal .quote:after {
     content: '\201D';
     position: absolute;
@@ -329,4 +319,76 @@ body {
     font-style: italic;
     color: #e7e6e4;
     z-index: -1;
+}
+
+/*********************************************
+ * SLIDE COLUMNS
+ *********************************************/
+
+/* .reveal #double ol:first-of-type  { width:50%;}
+.reveal #triple ol:first-of-type  { width:33.333%; }
+.reveal #quad ol:first-of-type    { width:25%; }
+.reveal #six ol:first-of-type     { width:16.666%; } */
+
+
+/*********************************************
+ * TEXT STYLES
+ *********************************************/
+
+.reveal .smaller {
+     font-size: smaller;
+}
+
+.reveal .xx-small {
+     font-size: xx-small;
+}
+
+.reveal .x-small {
+     font-size: x-small;
+}
+
+.reveal .small {
+     font-size: small;
+}
+
+.reveal .medium {
+     font-size: medium;
+}
+
+.reveal .large {
+     font-size: large;
+}
+
+.reveal .x-large {
+     font-size: x-large;
+}
+
+.reveal .xx-large {
+     font-size: xx-large;
+}
+
+.reveal .larger {
+     font-size: larger;
+}
+
+/*********************************************
+ * ORDERED LISTS ACROSS COLUMNS
+ *********************************************/
+.reveal ol {
+  list-style: none;
+}
+
+.reveal ol li:before {
+  counter-increment: mycounter;
+  content: counter(mycounter) ". ";
+}
+
+.reveal ol:first-of-type {
+  counter-reset: mycounter;
+}
+
+
+.reveal .code-line-wrap {
+    word-wrap: normal;
+    white-space: pre-wrap;
 }
