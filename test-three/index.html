@@ -51,7 +51,7 @@
               <li>Puppet
                 <ol>
                   <li>Define game resources</li>
-                  <li>Read configurations from Rails </li>as facts adfad afdadfadfa afdadf adfasdfasdf 
+                  <li>Read configurations from Rails </li>as facts 
                   <li>Demonstrate the Ruby we've learned</li>
                 </ol>
               </li>
@@ -73,6 +73,11 @@
               </blockquote>
             </h3>
           </h1>
+          <div class="footnote">
+            <ul>
+              <li> <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html">http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html</a></li>
+            </ul>
+          </div>
         </section>
         <section>
           <h1>Duck Typing</h1>
@@ -90,7 +95,7 @@
         </section>
         <section>
           <h1>Comments</h1>
-          <pre><code class="data-trim data-noescape code-line-wrap"># this is a ruby comment
+          <pre class="ruby"><code class="code-line-wrap"># this is a ruby comment
 ##
 # We'll use #=> to represent the output of an expression,
 # as if it were evaluated in the Interactive Ruby Shell (irb
@@ -105,11 +110,12 @@ You might also come across this style for multi-line comments, but using # is mo
         </section>
         <section>
           <h1>Strings</h1>
-          <pre><code class="data-trim code-line-wraps"># single quotes are for literal strings
+          <pre class="ruby"><code class="code-line-wrap"># single quotes are for literal strings
 'Hello'
 
 # double quotes allow special characters
 # and variable interpolation
+"pi is:\t#{Math::PI}"
 
 # escaping quotes isn't fun, let ruby do that for us
 %{That's a "quoted" string}
@@ -118,6 +124,26 @@ You might also come across this style for multi-line comments, but using # is mo
 # we often need to trim whitespace off of a string
 "hello \n".strip
 #=> "hello"</code></pre>
+        </section>
+        <section>
+          <h1>Strings</h1>
+          <pre class="ruby"><code class="code-line-wrap">$my_global_variable = "Try to avoid using global variables"
+$my_global_variable = "whenever possible"
+
+MY_GLOBAL_CONSTANT = "I am a constant"
+MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
+        </section>
+        <section>
+          <h1 class="labs">Lab 02: Basic Types</h1>
+          <h2>Launch IRb (part 1/10)</h2>
+          <ol>
+            <li> <code>ssh </code>into the VM</li>
+            <li>Type <code>irb</code></li>
+            <li>You should see a prompt like</li>
+            <pre class="ruby"><code>2.3.3 :001 ></code></pre>
+            <li>Exit <code>irb</code> by typing <code>exit</code>, <code>quit</code>, or CTRL+d (End of File)</li>
+            <li>Launch <code>irb</code> again for the next several sections of this lab</li>
+          </ol>
         </section>
       </div>
     </div>

@@ -371,6 +371,10 @@ body {
      font-size: larger;
 }
 
+.reveal .top-align {
+
+}
+
 /*********************************************
  * ORDERED LISTS ACROSS COLUMNS
  *********************************************/
@@ -385,6 +389,7 @@ body {
 
 .reveal ol:first-of-type {
   counter-reset: mycounter;
+  vertical-align: top;
 }
 
 
@@ -392,3 +397,19 @@ body {
     word-wrap: normal;
     white-space: pre-wrap;
 }
+
+/*********************************************
+ * FOOTNOTES
+ *********************************************/
+
+ .reveal .footnote {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding-top: 1vmin;
+ }
+
+ .reveal .footnote ul, .reveal .footnote ol {
+     font-size: medium;
+ }

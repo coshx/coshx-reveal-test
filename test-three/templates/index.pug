@@ -39,7 +39,7 @@ block slides
                 ol
                   li Define game resources
                   li Read configurations from Rails 
-                  | as facts adfad afdadfadfa afdadf adfasdfasdf 
+                  | as facts 
                   li Demonstrate the Ruby we've learned
               li other stuff
                 ol
@@ -51,6 +51,10 @@ block slides
           h3 Principle of Least Surprise
             blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
               footer Yukihiro “Matz” Matsumoto, created ruby in 1993
+        .footnote
+            ul
+                li 
+                    a(href='http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html') http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
     +slide
         h1 Duck Typing
         ul
@@ -64,8 +68,8 @@ block slides
             li.fragment.fade-in Types aren’t checked unless code explicitly checks
     +slide
         h1 Comments
-        pre
-          code.data-trim.data-noescape.code-line-wrap
+        pre.ruby
+          code.code-line-wrap
                 | # this is a ruby comment
                 | ##
                 | # We'll use #=> to represent the output of an expression,
@@ -78,17 +82,16 @@ block slides
                 | =begin 
                 | You might also come across this style for multi-line comments, but using # is more prevalent. 
                 | =end
-            
     +slide
         h1 Strings
-        pre
-            code.data-trim.code-line-wraps
+        pre.ruby
+            code.code-line-wrap
                 | # single quotes are for literal strings
                 | 'Hello'
                 |
                 | # double quotes allow special characters
                 | # and variable interpolation
-                //- | "pi is:\t#{Math::PI}"
+                | "pi is:\t\#{Math::PI}"
                 |
                 | # escaping quotes isn't fun, let ruby do that for us
                 | %{That's a "quoted" string}
@@ -97,3 +100,26 @@ block slides
                 | # we often need to trim whitespace off of a string
                 | "hello \n".strip
                 | #=> "hello"
+    +slide
+        h1 Strings
+        pre.ruby
+            code.code-line-wrap
+                |$my_global_variable = "Try to avoid using global variables"
+                |$my_global_variable = "whenever possible"
+                |
+                |MY_GLOBAL_CONSTANT = "I am a constant"
+                |MY_GLOBAL_CONSTANT = "warning if you try to change me"
+    +slide
+        h1.labs Lab 02: Basic Types
+        h2 Launch IRb (part 1/10)
+        ol
+            li 
+                code ssh 
+                | into the VM
+            li Type <code>irb</code>
+            li You should see a prompt like
+            pre.ruby
+                code
+                    | 2.3.3 :001 >
+            li Exit <code>irb</code> by typing <code>exit</code>, <code>quit</code>, or CTRL+d (End of File)
+            li Launch <code>irb</code> again for the next several sections of this lab
