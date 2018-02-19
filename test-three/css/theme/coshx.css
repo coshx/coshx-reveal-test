@@ -1,7 +1,11 @@
 /**
- * White theme for reveal.js. This is the opposite of the 'black' theme.
+ * Coshx theme for reveal.js. Based on 'White' theme.
  *
- * By Hakim El Hattab, http://hakim.se
+ * Blue 1 - #301fff (lightest)
+ * Blue 2 - #1126d4
+ * Blue 3 - #0229bf
+ * Blue 4 - #002347 (darkest)
+ * Grey 1 - #7e85a0
  */
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
@@ -12,13 +16,15 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 body {
   background: #fff;
-  background-color: #fff; }
+  background-color: #fff;
+  color: #002347; }
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 38px;
-  font-weight: normal;
-  color: #222; }
+  font-weight: normal;002347
+  /* color: #222; */
+  color: #002347; }
 
 ::selection {
   color: #fff;
@@ -40,7 +46,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #222;
+  /* color: #222; */
+  color: #002347;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -205,15 +212,27 @@ body {
 /*********************************************
  * LINKS
  *********************************************/
+
+ /**
+  * Blue 1 - #301fff (lightest)
+  * Blue 2 - #1126d4
+  * Blue 3 - #0229bf
+  * Blue 4 - #002347 (darkest)
+  * Grey 1 - #7e85a0
+  */
+
+
 .reveal a {
-  color: #2a76dd;
+  /* color: #2a76dd; */
+  color: #0229bf;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #6ca0e8;
+  /* color: #6ca0e8; */
+  color: #301fff;
   text-shadow: none;
   border: none; }
 
@@ -402,9 +421,13 @@ body {
  * FOOTNOTES
  *********************************************/
 
+.safari-fix {
+    height: 1px;
+}
+
  .reveal .footnote {
      position: fixed;
-     bottom: 0;
+     /* bottom: 0; */
      left: 0;
      right: 0;
      padding-top: 1vmin;

@@ -5,22 +5,22 @@ extends layouts/presentation
 block append config
   -
     config.title = 'Coshx Slide Presentation';
-    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf. Modified by @gopalmetro @coshxlabs';
+    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf. Customized by @gopalmetro @coshxlabs';
   -
 
 //- Add your slides here. See templates/includes/_mixins.pug for information
 //- on how `+slide` works.
 block slides
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1  Ruby, Rails, & some puppet
         ul
             li Instructor: Ben Taitelbaum
             li Slides:
-                a(href="https://coshx.com/talks") https://coshx.com/talks
+                a(href="https://coshx.com/talks" target="_blank")  https://coshx.com/talks
             li Completed Labs:
-                a(href=" https://github.com/btaitelb/ruby_rails_puppet_training") https://github.com/btaitelb/ruby_rails_puppet_training
+                a(href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank")  https://github.com/btaitelb/ruby_rails_puppet_training
 
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Course Flow
         .x-large
             ol
@@ -46,16 +46,17 @@ block slides
                   li Advanced topics
                   li Team-specific
                   li Creative
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Philosophy
           h3 Principle of Least Surprise
             blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
               footer Yukihiro “Matz” Matsumoto, created ruby in 1993
-        .footnote
-            ul
-                li 
-                    a(href='http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html') http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
-    +slide
+        .safari-fix
+            .footnote
+                ul
+                    li 
+                        a(href='http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html' target="_blank") http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Duck Typing
         ul
             li “If it walks and talks like a duck…”
@@ -66,7 +67,7 @@ block slides
             ul
                 li.fragment.fade-in everything has a type and objects don’t change type
             li.fragment.fade-in Types aren’t checked unless code explicitly checks
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Comments
         pre.ruby
           code.code-line-wrap
@@ -82,7 +83,7 @@ block slides
                 | =begin 
                 | You might also come across this style for multi-line comments, but using # is more prevalent. 
                 | =end
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Strings
         pre.ruby
             code.code-line-wrap
@@ -100,7 +101,7 @@ block slides
                 | # we often need to trim whitespace off of a string
                 | "hello \n".strip
                 | #=> "hello"
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Strings
         pre.ruby
             code.code-line-wrap
@@ -109,7 +110,7 @@ block slides
                 |
                 |MY_GLOBAL_CONSTANT = "I am a constant"
                 |MY_GLOBAL_CONSTANT = "warning if you try to change me"
-    +slide
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1.labs Lab 02: Basic Types
         h2 Launch IRb (part 1/10)
         ol
