@@ -3,14 +3,14 @@ include ../includes/_mixins
 block config
   -
     const config = {
-      title: 'Reveal.js + Pug',
-      description: 'A framework for easily creating beautiful presentations using HTML.',
+      title: 'title goes here',
+      description: 'description goes here',
       author: {
-        name: 'Hakim El Hattab',
-        email: 'hakim.elhattab@gmail.com',
-        link: 'http://hakim.se',
-        twitter: 'hakimel',
-        github: 'hakimel',
+        name: 'author name goes here',
+        email: 'author email goes here',
+        link: 'author url goes here',
+        twitter: 'author twitter goes here',
+        github: 'author github goes here',
       },
       theme: 'coshx',
     };
@@ -41,18 +41,7 @@ html
       link#theme(rel="stylesheet" href= `css/theme/${config.theme}.css`)
 
     //- Syntax highlighting
-    link(rel="stylesheet" href="lib/css/docco.css")
-    //- coshx-code.css
-    //- atelier-forest-dark.css
-    //- atelier-heath-dark.css
-    //- atelier-lakeside-dark.css ***
-    //- hybrid.css *
-    //- docco.css ***
-    //- github.css
-    //- magula.css
-    //- qtcreator_dark.css ***
-    //- tomorrow-night-blue.css
-    //- xt256.css *
+    link(rel="stylesheet" href="lib/css/coshx-highlighting.css")
 
     //- Add extra styles using this block
     block styles
@@ -62,7 +51,7 @@ html
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/coshx-pdf.css' : 'css/print/coshx-paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
 
   body
