@@ -4,13 +4,42 @@ extends layouts/presentation
 //- Customize the title, meta description, and author using this block.
 block append config
   -
-    config.title = 'Coshx Slide Presentation';
-    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf. Customized by @gopalmetro @coshxlabs';
+    config.title = 'Coshx Reveal+Pug Demo';
+    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
+    config.author.name = '@coshx';
+    config.author.link = 'https://github.com/coshx'
   -
 
 //- Add your slides here. See templates/includes/_mixins.pug for information
 //- on how `+slide` works.
 block slides
+    +slide(data-background-size="contain" data-background-image=backgroundLink)
+        h1= config.title
+        p= config.description
+        p
+            small.
+                Demo created by #[a(href= config.author.link)= config.author.name]
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+        h1 Slide 1 Code
+        h6 Set variables in "block append config" block
+        pre.pug
+            code.code-line-wrap
+                |block append config
+                |  -
+                |    config.title = 'Coshx Reveal+Pug Demo';
+                |    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
+                |    config.author.name = '@coshx';
+                |    config.author.link = 'https://github.com/coshx'
+                |  -
+        h6 Build the actual slide
+        pre.pug
+            code.code-line-wrap
+                |+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+                |    h1= config.title
+                |    p= config.description
+                |    p
+                |        small.
+                |            Demo created by \#[a(href= config.author.link)= config.author.name]
     +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1  Ruby, Rails, & some puppet
         ul
@@ -19,7 +48,8 @@ block slides
                 a(href="https://coshx.com/talks" target="_blank")  https://coshx.com/talks
             li Completed Labs:
                 a(href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank")  https://github.com/btaitelb/ruby_rails_puppet_training
-
+                
+    
     +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Course Flow
         .x-large

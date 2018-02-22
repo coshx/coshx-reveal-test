@@ -136,8 +136,8 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 0px 2px #0229bf82; }
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Coshx Slide Presentation</title>
-    <meta name="description" content="Slide framework by @hakimel. Ported to Pug by @jlengstorf. Customized by @gopalmetro @coshxlabs">
+    <title>Coshx Reveal+Pug Demo</title>
+    <meta name="description" content="Slide framework by @hakimel. Ported to Pug by @jlengstorf.">
     <link rel="stylesheet" href="css/reveal.css">
     <link id="theme" rel="stylesheet" href="css/theme/coshx.css">
     <link rel="stylesheet" href="lib/css/coshx-highlighting.css">
@@ -20,6 +20,29 @@
   <body>
     <div class="reveal">
       <div class="slides">
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Coshx Reveal+Pug Demo</h1>
+          <p>Slide framework by @hakimel. Ported to Pug by @jlengstorf.</p>
+          <p><small>Demo created by <a href="https://github.com/coshx">@coshx</a></small></p>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 1 Code</h1>
+          <h6>Set variables in "block append config" block</h6>
+          <pre class="pug"><code class="code-line-wrap">block append config
+ -
+   config.title = 'Coshx Reveal+Pug Demo';
+   config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
+   config.author.name = '@coshx';
+   config.author.link = 'https://github.com/coshx'
+ -</code></pre>
+          <h6>Build the actual slide</h6>
+          <pre class="pug"><code class="code-line-wrap">+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+   h1= config.title
+   p= config.description
+   p
+       small.
+           Demo created by #[a(href= config.author.link)= config.author.name]</code></pre>
+        </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1> Ruby, Rails, & some puppet</h1>
           <ul>
