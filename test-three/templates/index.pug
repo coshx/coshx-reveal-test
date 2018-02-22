@@ -9,11 +9,10 @@ block append config
     config.author.name = '@coshx';
     config.author.link = 'https://github.com/coshx'
   -
-
 //- Add your slides here. See templates/includes/_mixins.pug for information
 //- on how `+slide` works.
 block slides
-    +slide(data-background-size="contain" data-background-image=backgroundLink)
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1= config.title
         p= config.description
         p
@@ -49,7 +48,19 @@ block slides
             li Completed Labs:
                 a(href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank")  https://github.com/btaitelb/ruby_rails_puppet_training
                 
-    
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+        h1 Slide 2 Code
+        h6 content
+        pre.pug
+            code.code-line-wrap
+                |h1  Ruby, Rails, & some puppet
+                |ul
+                |    li Instructor: Ben Taitelbaum
+                |    li Slides:
+                |        a(href="https://coshx.com/talks" target="_blank")  https://coshx.com/talks
+                |    li Completed Labs:
+                |        a(href= "https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank") https://github.com/btaitelb/ruby_rails_puppet_training
+                
     +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Course Flow
         .x-large
@@ -76,6 +87,42 @@ block slides
                   li Advanced topics
                   li Team-specific
                   li Creative
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+        h1 Slide 3 Code
+        h6 content part 1
+        pre.pug
+            code.code-line-wrap
+                |+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+                |    h1 Course Flow
+                |    .x-large
+                |        ol
+                |          li Ruby
+                |            ol
+                |              li Build a game in Ruby
+                |              li Package the game as a gem
+                |              li Expose some logic via the server
+                |          li Rails
+                |            ol
+                |              li Configure & manage
+                |              li Graphical front-end
+                |              li Persistent Storage
+    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+        h1 Slide 3 Code
+        h6 content part 2
+        pre.pug
+            code.code-line-wrap            
+                |ol
+                |              li Puppet
+                |                ol
+                |                  li Define game resources
+                |                  li Read configurations from Rails as facts
+                |                  li Demonstrate the Ruby we've learned
+                |              li other stuff
+                |                ol
+                |                  li Advanced topics
+                |                  li Team-specific
+                |                  li Creative
+                
     +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
         h1 Philosophy
           h3 Principle of Least Surprise
