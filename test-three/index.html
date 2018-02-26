@@ -22,21 +22,45 @@
       <div class="slides">
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Coshx Reveal+Pug Demo</h1>
-          <p>Slide framework by @hakimel. Ported to Pug by @jlengstorf.</p>
-          <p><small>Demo created by <a href="https://github.com/coshx">@coshx</a></small></p>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
-          <h1>Slide 1 Code</h1>
-          <h6>Set variables in "block append config" block</h6>
-          <pre class="pug"><code class="code-line-wrap">block append config
+          <h1>Setup pt. 1</h1>
+          <h6>Edit Config settings in 'presentation.pug'</h6>
+          <pre><code class="code-line-wrap">   const config = {
+     title: 'title goes here',
+     description: 'description goes here',
+     author: {
+       name: 'author name goes here',
+       email: 'author email goes here',
+       link: 'author url goes here',
+       twitter: 'author twitter goes here',
+       github: 'author github goes here',
+     },
+     theme: 'theme name goes here', // name only, e.g. 'coshx', not 'coshx.css' or 'css/theme/coshx.css'
+   };
+ - var slideBackground = {'data-background-size': 'contain', 'data-background-image': '/images/coshx-background.png'}</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Setup pt. 2</h1>
+          <h6>Or overwrite config variables in 'index.pug'</h6>
+          <pre><code class="code-line-wrap">block append config
  -
    config.title = 'Coshx Reveal+Pug Demo';
    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
    config.author.name = '@coshx';
    config.author.link = 'https://github.com/coshx'
  -</code></pre>
-          <h6>Build the actual slide</h6>
-          <pre class="pug"><code class="code-line-wrap">+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Coshx Reveal+Pug Demo</h1>
+          <p>Slide framework by @hakimel. Ported to Pug by @jlengstorf.</p>
+          <p><small>Demo created by <a href="https://github.com/coshx">@coshx</a>
+              </small></p>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 1</h1>
+          <h6>Build the actual slide using the +slide mixin</h6>
+          <pre><code class="code-line-wrap">+slide&attributes(slideBackground)
    h1= config.title
    p= config.description
    p
@@ -54,7 +78,7 @@
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Slide 2 Code</h1>
           <h6>content</h6>
-          <pre class="pug"><code class="code-line-wrap">h1  Ruby, Rails, & some puppet
+          <pre><code class="code-line-wrap">h1  Ruby, Rails, & some puppet
 ul
    li Instructor: Ben Taitelbaum
    li Slides:
@@ -102,7 +126,7 @@ ul
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Slide 3 Code</h1>
           <h6>content part 1</h6>
-          <pre class="pug"><code class="code-line-wrap">+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+          <pre><code class="code-line-wrap">+slide&attributes(slideBackground)
    h1 Course Flow
    .x-large
        ol
@@ -120,7 +144,7 @@ ul
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Slide 3 Code</h1>
           <h6>content part 2</h6>
-          <pre class="pug"><code class="code-line-wrap">           ol
+          <pre><code class="code-line-wrap">           ol
              li Puppet
                ol
                  li Define game resources

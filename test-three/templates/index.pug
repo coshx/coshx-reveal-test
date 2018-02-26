@@ -7,21 +7,37 @@ block append config
     config.title = 'Coshx Reveal+Pug Demo';
     config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
     config.author.name = '@coshx';
-    config.author.link = 'https://github.com/coshx'
+    config.author.link = 'https://github.com/coshx';
+    config.theme = 'coshx';
   -
 //- Add your slides here. See templates/includes/_mixins.pug for information
 //- on how `+slide` works.
 block slides
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1= config.title
-        p= config.description
-        p
-            small.
-                Demo created by #[a(href= config.author.link)= config.author.name]
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
-        h1 Slide 1 Code
-        h6 Set variables in "block append config" block
-        pre.pug
+    +slide&attributes(slideBackground)
+        h1 Setup pt. 1
+        h6 Edit Config settings in 'presentation.pug'
+        pre
+            code.code-line-wrap
+                |    const config = {
+                |      title: 'title goes here',
+                |      description: 'description goes here',
+                |      author: {
+                |        name: 'author name goes here',
+                |        email: 'author email goes here',
+                |        link: 'author url goes here',
+                |        twitter: 'author twitter goes here',
+                |        github: 'author github goes here',
+                |      },
+                |      theme: 'theme name goes here', // name only, e.g. 'coshx', not 'coshx.css' or 'css/theme/coshx.css'
+                |    };
+                |  - var slideBackground = {'data-background-size': 'contain', 'data-background-image': '/images/coshx-background.png'}
+                        
+    +slide&attributes(slideBackground)
+        h1 Setup pt. 2
+        h6 Or overwrite config variables in 'index.pug'
+        pre
             code.code-line-wrap
                 |block append config
                 |  -
@@ -30,16 +46,25 @@ block slides
                 |    config.author.name = '@coshx';
                 |    config.author.link = 'https://github.com/coshx'
                 |  -
-        h6 Build the actual slide
-        pre.pug
+    +slide&attributes(slideBackground)
+        h1= config.title
+        p= config.description
+        p
+            small.
+                Demo created by #[a(href= config.author.link)= config.author.name]
+        
+    +slide&attributes(slideBackground)
+        h1 Slide 1
+        h6 Build the actual slide using the +slide mixin
+        pre
             code.code-line-wrap
-                |+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+                |+slide&attributes(slideBackground)
                 |    h1= config.title
                 |    p= config.description
                 |    p
                 |        small.
                 |            Demo created by \#[a(href= config.author.link)= config.author.name]
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1  Ruby, Rails, & some puppet
         ul
             li Instructor: Ben Taitelbaum
@@ -48,10 +73,10 @@ block slides
             li Completed Labs:
                 a(href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank")  https://github.com/btaitelb/ruby_rails_puppet_training
                 
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Slide 2 Code
         h6 content
-        pre.pug
+        pre
             code.code-line-wrap
                 |h1  Ruby, Rails, & some puppet
                 |ul
@@ -61,7 +86,7 @@ block slides
                 |    li Completed Labs:
                 |        a(href= "https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank") https://github.com/btaitelb/ruby_rails_puppet_training
                 
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Course Flow
         .x-large
             ol
@@ -87,12 +112,12 @@ block slides
                   li Advanced topics
                   li Team-specific
                   li Creative
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Slide 3 Code
         h6 content part 1
-        pre.pug
+        pre
             code.code-line-wrap
-                |+slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+                |+slide&attributes(slideBackground)
                 |    h1 Course Flow
                 |    .x-large
                 |        ol
@@ -106,10 +131,10 @@ block slides
                 |              li Configure & manage
                 |              li Graphical front-end
                 |              li Persistent Storage
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Slide 3 Code
         h6 content part 2
-        pre.pug
+        pre
             code.code-line-wrap            
                 |ol
                 |              li Puppet
@@ -123,7 +148,7 @@ block slides
                 |                  li Team-specific
                 |                  li Creative
                 
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Philosophy
           h3 Principle of Least Surprise
             blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
@@ -133,7 +158,7 @@ block slides
                 ul
                     li 
                         a(href='http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html' target="_blank") http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Duck Typing
         ul
             li “If it walks and talks like a duck…”
@@ -144,7 +169,7 @@ block slides
             ul
                 li.fragment.fade-in everything has a type and objects don’t change type
             li.fragment.fade-in Types aren’t checked unless code explicitly checks
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Comments
         pre.ruby
           code.code-line-wrap
@@ -160,7 +185,7 @@ block slides
                 | =begin 
                 | You might also come across this style for multi-line comments, but using # is more prevalent. 
                 | =end
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Strings
         pre.ruby
             code.code-line-wrap
@@ -178,7 +203,7 @@ block slides
                 | # we often need to trim whitespace off of a string
                 | "hello \n".strip
                 | #=> "hello"
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1 Strings
         pre.ruby
             code.code-line-wrap
@@ -187,7 +212,7 @@ block slides
                 |
                 |MY_GLOBAL_CONSTANT = "I am a constant"
                 |MY_GLOBAL_CONSTANT = "warning if you try to change me"
-    +slide(data-background-size="contain" data-background-image="/images/coshx-background.png")
+    +slide&attributes(slideBackground)
         h1.labs Lab 02: Basic Types
         h2 Launch IRb (part 1/10)
         ol
