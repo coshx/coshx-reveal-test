@@ -68,6 +68,14 @@ body {
 .reveal h4 {
   font-size: 1em; }
 
+.reveal h5 {
+  font-size: .8em;
+  text-transform: capitalize; }
+
+.reveal h6 {
+  font-size: .6em;
+  text-transform: capitalize; }
+
 .reveal h1 {
   text-shadow: none; }
 
@@ -166,7 +174,10 @@ body {
   padding: 5px;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+  background-color: rgba(255, 255, 255, 0.8)
+
+}
 
 .reveal table {
   margin: auto;

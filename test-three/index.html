@@ -22,11 +22,12 @@
       <div class="slides">
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Coshx Reveal+Pug Demo</h1>
+          <h5>This title slide uses config.title</h5>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Setup pt. 1</h1>
-          <h6>Edit Config settings in 'presentation.pug'</h6>
-          <pre><code class="code-line-wrap">   const config = {
+          <h5>'presentation.pug': Edit config settings</h5>
+          <pre><code class="code-line-wrap nohighlight large">   const config = {
      title: 'title goes here',
      description: 'description goes here',
      author: {
@@ -39,11 +40,17 @@
      theme: 'theme name goes here', // name only, e.g. 'coshx', not 'coshx.css' or 'css/theme/coshx.css'
    };
  - var slideBackground = {'data-background-size': 'contain', 'data-background-image': '/images/coshx-background.png'}</code></pre>
+          <h5>Define slide width in the </h5>
+          <pre><code class="code-line-wrap nohighlight large">// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+ history: true,
+ width: '100%',
+ height: '100%',</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Setup pt. 2</h1>
-          <h6>Or overwrite config variables in 'index.pug'</h6>
-          <pre><code class="code-line-wrap">block append config
+          <h5>'index.pug': Overwrite Config settings in 'block append config'</h5>
+          <pre><code class="code-line-wrap nohighlight large">block append config
  -
    config.title = 'Coshx Reveal+Pug Demo';
    config.description = 'Slide framework by @hakimel. Ported to Pug by @jlengstorf.';
@@ -59,8 +66,9 @@
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Slide 1</h1>
-          <h6>Build the actual slide using the +slide mixin</h6>
-          <pre><code class="code-line-wrap">+slide&attributes(slideBackground)
+          <h5>'index.pug': Start building slides using the '+slide' mixin</h5>
+          <h6>'&attributes(slideBackground)' uses the slideBackground variable in 'presentation.pug' to set the background image</h6>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
    h1= config.title
    p= config.description
    p
@@ -72,13 +80,13 @@
           <ul>
             <li>Instructor: Ben Taitelbaum</li>
             <li>Slides:<a href="https://coshx.com/talks" target="_blank"> https://coshx.com/talks</a></li>
-            <li>Completed Labs:<a href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank"> https://github.com/btaitelb/ruby_rails_puppet_training</a></li>
+            <li>Completed Labs:<a href="https://github.com/btaitelb/ruby_rails_puppet_training" target="_blank"> https://github.com/btaitelb/ruby_rails_puppet_training                </a></li>
           </ul>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Slide 2 Code</h1>
-          <h6>content</h6>
-          <pre><code class="code-line-wrap">h1  Ruby, Rails, & some puppet
+          <h5>Headers, Unordered Lists and Links</h5>
+          <pre><code class="code-line-wrap nohighlight large">h1  Ruby, Rails, & some puppet
 ul
    li Instructor: Ben Taitelbaum
    li Slides:
@@ -124,9 +132,9 @@ ul
           </div>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
-          <h1>Slide 3 Code</h1>
-          <h6>content part 1</h6>
-          <pre><code class="code-line-wrap">+slide&attributes(slideBackground)
+          <h1>Slide 3.0 Code</h1>
+          <h5>Two Column Ordered List: Column 1</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
    h1 Course Flow
    .x-large
        ol
@@ -142,19 +150,20 @@ ul
              li Persistent Storage</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
-          <h1>Slide 3 Code</h1>
-          <h6>content part 2</h6>
-          <pre><code class="code-line-wrap">           ol
-             li Puppet
-               ol
-                 li Define game resources
-                 li Read configurations from Rails as facts
-                 li Demonstrate the Ruby we've learned
-             li other stuff
-               ol
-                 li Advanced topics
-                 li Team-specific
-                 li Creative</code></pre>
+          <h1>Slide 3.1 Code</h1>
+          <h5>Two Column Ordered List: Column 2</h5>
+          <pre><code class="code-line-wrap nohighlight large">           ol
+              li Puppet
+                ol
+                  li Define game resources
+                  li Read configurations from Rails 
+                  |  as facts
+                  li Demonstrate the Ruby we've learned
+              li other stuff
+                ol
+                  li Advanced topics
+                  li Team-specific
+                  li Creative                </code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Philosophy
@@ -164,27 +173,55 @@ ul
               </blockquote>
             </h3>
           </h1>
-          <div class="safari-fix">
-            <div class="footnote">
-              <ul>
-                <li> <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html" target="_blank">http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html</a></li>
-              </ul>
-            </div>
+          <div class="footnote">
+            <ul>
+              <li> <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html" target="_blank">http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html</a></li>
+            </ul>
           </div>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 4 Code</h1>
+          <h5>Blockquotes with Attribution</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1 Philosophy
+     h3 Principle of Least Surprise
+       blockquote.quote I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
+         footer Yukihiro “Matz” Matsumoto, created ruby in 1993
+       .footnote
+           ul
+               li
+                  a(href='http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html' target="_blank")} 
+                  http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html}</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Duck Typing</h1>
-          <ul>
-            <li>“If it walks and talks like a duck…”</li>
-            <li class="fragment fade-in">Then it’s a duck!</li>
+          <ul class="fragment fade-in">
+            <li class="fragment fade-out">“If it walks and talks like a duck, then…”</li>
+            <li class="fragment highlight-red">It’s a duck!</li>
             <li class="fragment fade-in">As long as an object has the methods we expect, we can ignore its type.</li>
-            <li class="fragment fade-in">Dynamic Typing: objects aren’t type checked until runtime</li>
-            <li class="fragment fade-in">Objects are strongly typed</li>
-            <ul>
-              <li class="fragment fade-in">everything has a type and objects don’t change type</li>
-            </ul>
-            <li class="fragment fade-in">Types aren’t checked unless code explicitly checks</li>
+            <li class="fragment fade-down">Dynamic Typing: objects aren’t type checked until runtime</li>
+            <li class="fragment fade-up">Objects are strongly typed
+              <ul class="fragment fade-in">
+                <li class="fragment shrink">everything has a type and objects don’t change type</li>
+                <li class="fragment grow">Types aren’t checked unless code explicitly checks</li>
+              </ul>
+            </li>
           </ul>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 5 Code</h1>
+          <h5>Animated Lists</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1 Duck Typing
+   ul.fragment.fade-in
+       li.fragment.fade-out “If it walks and talks like a duck…”
+       li.fragment.highlight-red Then it’s a duck!
+       li.fragment.fade-in As long as an object has the methods we expect, we can ignore its type.
+       li.fragment.fade-down Dynamic Typing: objects aren’t type checked until runtime
+       li.fragment.fade-up Objects are strongly typed
+          ul.fragment.fade-in
+              li.fragment.shrink everything has a type and objects don’t change type
+              li.fragment.grow Types aren’t checked unless code explicitly checks</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Comments</h1>
@@ -200,6 +237,26 @@ ul
 =begin 
 You might also come across this style for multi-line comments, but using # is more prevalent. 
 =end</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 6 Code</h1>
+          <h5>Ruby Syntax Highilighting #1: Comments</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1 Comments
+   pre.ruby
+     code.code-line-wrap
+           | # this is a ruby comment
+           | ##
+           | # We'll use #=> to represent the output of an expression,
+           | # as if it were evaluated in the Interactive Ruby Shell (irb
+           | ##
+           |
+           | 3/4.0
+           | #=> 0.75
+           |
+           | =begin 
+           | You might also come across this style for multi-line comments, but using # is more prevalent. 
+           | =end</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Strings</h1>
@@ -219,12 +276,47 @@ You might also come across this style for multi-line comments, but using # is mo
 #=> "hello"</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 7 Code</h1>
+          <h5>Ruby Syntax Highilighting #2: Strings</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1 Strings
+   pre.ruby
+       code.code-line-wrap
+           | # single quotes are for literal strings
+           | 'Hello'
+           |
+           | # double quotes allow special characters
+           | # and variable interpolation
+           | "pi is:\t#{Math::PI}"
+           |
+           | # escaping quotes isn't fun, let ruby do that for us
+           | %{That's a "quoted" string}
+           | #=> "That's a \"quoted\" string"
+           |
+           | # we often need to trim whitespace off of a string
+           | "hello \n".strip
+           | #=> "hello"</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Strings</h1>
           <pre class="ruby"><code class="code-line-wrap">$my_global_variable = "Try to avoid using global variables"
 $my_global_variable = "whenever possible"
 
 MY_GLOBAL_CONSTANT = "I am a constant"
 MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 8 Code</h1>
+          <h5>Ruby Syntax Highilighting #3</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1 Strings
+   pre.ruby
+       code.code-line-wrap
+           |$my_global_variable = "Try to avoid using global variables"
+           |$my_global_variable = "whenever possible"
+           |
+           |MY_GLOBAL_CONSTANT = "I am a constant"
+           |MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1 class="labs">Lab 02: Basic Types</h1>
@@ -238,6 +330,92 @@ MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
             <li>Launch <code>irb</code> again for the next several sections of this lab</li>
           </ol>
         </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 9 Code</h1>
+          <h5>Ruby Global Variables and Constants</h5>
+          <pre><code class="code-line-wrap nohighlight large">+slide&attributes(slideBackground)
+   h1.labs Lab 02: Basic Types
+   h2 Launch IRb (part 1/10)
+   ol
+       li 
+           code ssh 
+           | into the VM
+       li Type <code>irb</code>
+       li You should see a prompt like
+       pre.ruby
+           code
+               | 2.3.3 :001 >
+       li Exit <code>irb</code> by typing <code>exit</code>, <code>quit</code>, or CTRL+d (End of File)
+       li Launch <code>irb</code> again for the next several sections of this lab</code></pre>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 10</h1>
+          <h5>Speaker notes</h5>
+          <div class="smaller">
+            <ul>
+              <li class="fragment fade-in"> Press "s" to view speaker notes in a new window</li>
+              <li class="fragment fade-in"> Server-side speaker notes for viewing on your mobile device</li>
+              <li class="fragment fade-in"> Three different timers
+                <ul class="smaller">
+                  <li class="fragment fade-in"> Current wall-clock time</li>
+                  <li class="fragment fade-in"> Time elapsed since the beginning of the presentation</li>
+                  <li class="fragment fade-in"> (Optional) Pacing timer that shows red if behind time, green if on time and blue if ahead of time</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 11</h1>
+          <h5>General Notes about Reveal.js + Pug</h5>
+          <div class="smaller">
+            <ul>
+              <li class="fragment fade-in"> New slide with '+slide'</li>
+              <li class="fragment fade-in"> +slide(attribute1='value1' attribute2='value2')</li>
+              <li class="fragment fade-in"> +slide&attributes(slideBackground)</li>
+              <li class="fragment fade-in"> Whitespace sensitive.</li>
+              <li class="fragment fade-in"> h1.classname</li>
+              <li class="fragment fade-in"> h1#idname</li>
+              <li class="fragment fade-in"> divs do not need to be named
+                <ul>
+                  <li class="fragment fade-in"> #id is equivalent to div#id</li>
+                </ul>
+              </li>
+              <li class="fragment fade-in"> a(href='link') on it's own indented line - <a href="https://google.com">A link</a></li>
+              <pre class="fragment fade-in"><code class="code-line-wrap nohighlight large">li.fragment.fade-in a(href='link') on it's own indented line
+    a(href='https://google.com') A link</code></pre>
+            </ul>
+          </div>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 12</h1>
+          <h5>Other Things You Can Do With Reveal.js</h5>
+          <div class="smaller">
+            <ul>
+              <li class="fragment fade-in">Easily adjustable slide sizes</li>
+              <li class="fragment fade-in">Automatic scaling for different devices</li>
+              <li class="fragment fade-in">Auto-sliding for timed presentations</li>
+              <li class="fragment fade-in">Touch Navigation on touch sensitive devices</li>
+              <li class="fragment fade-in">Lazy loading for large presentations</li>
+              <li class="fragment fade-in">Custom Print and Print to PDF stylesheets</li>
+              <li class="fragment fade-in">Color, Image, Video, iFrame and Parallax backgrounds with Background Transitions</li>
+              <li class="fragment fade-in">Cross-Slide Linking</li>
+            </ul>
+          </div>
+        </section>
+        <section data-background-size="contain" data-background-image="/images/coshx-background.png">
+          <h1>Slide 13</h1>
+          <h5>Other Things You Can Do With Reveal.js (cont.)</h5>
+          <div class="smaller">
+            <ul>
+              <li class="fragment fade-in">Fragments for manipulating individual elements in a slide</li>
+              <li class="fragment fade-in">Overview Mode for quickly scanning all slideshow</li>
+              <li class="fragment fade-in">Custom Themes</li>
+              <li class="fragment fade-in">Lots more at <a href="https://pugjs.org/">https://pugjs.org/</a></li>
+              <li class="fragment fade-in">And <a href="https://github.com/hakimel/reveal.js/">https://github.com/hakimel/reveal.js/</a></li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
@@ -246,13 +424,15 @@ MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         history: true,
+        width: '100%',
       
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } 
+           }
         ]
       });
       
