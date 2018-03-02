@@ -23,6 +23,7 @@
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Coshx Reveal+Pug Demo</h1>
           <h5>This title slide uses config.title</h5>
+          <aside class="notes">This is a note</aside>
         </section>
         <section data-background-size="contain" data-background-image="/images/coshx-background.png">
           <h1>Setup pt. 1</h1>
@@ -431,6 +432,8 @@ MY_GLOBAL_CONSTANT = "warning if you try to change me"</code></pre>
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/notes/notes.js', async: true },
+          { src: 'socket.io/socket.io.js', async: true },
+          { src: 'plugin/notes-server/client.js', async: true },
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } 
            }
         ]
